@@ -17,20 +17,21 @@ This API delegates these tasks to a local EJB bean deployed in the Glassfish ins
 * Complete the "login.conf" file in the "config" directory with :
 
 ```
-RiveraCodeRealm {
+RiveraRealmContext {
     com.rivieracode.realm.LoginModule required;
  };
 ```
 
 * Create a realm in Configuration > server-config > Security > realms :
-	- give any name to the realm (ex : MyRealm) - set the custom class name as "com.rivieracode.realm.Realm"
+	- give any name to the realm (ex : MyRealm) 
+	- set the custom class name as "com.rivieracode.realm.Realm"
 	- add the additional property LOCAL_BEAN_JNDI with the JNDI name space of the bean implementing the RealmDelegate interface  (ex: java:global/MyDelegatedApplicationName/MyLocalBean )
 
 # Delegated Application Setup
 
-The application managing the authentication and authorization must add the JAR as a dependency and provide an EJB implementing the RealmDelegate interface.
+Add the JAR as dependency or copy the RealmDelegate interface to the project.
 
-The LOCAL_BEAN_JNDI property in the realm configuration must be set to the JNDI name space of this EJB.
+The LOCAL_BEAN_JNDI additional property in the realm configuration must be set to the JNDI name space of the local EJB implementing the RealmDelegate interface.
 
 # Client Application Setup
 

@@ -16,11 +16,11 @@
  * <ul>
  * <li>Add this project JAR to the domain "lib" folder</li>
  * <li>Complete the "login.conf" file in the "config" directory with :
- * <pre>{@code RiveraCodeRealm {
+ * <pre>{@code RiveraRealmContext {
  *    com.rivieracode.realm.LoginModule required;
  * };}</pre></li>
  * <li>Create a realm in Configuration &gt; server-config &gt; Security &gt; realms :<br>
- * - give any name to the realm (ex : MyRealm)
+ * - give any name to the realm (ex : MyRealm)<br>
  * - set the custom class name as "com.rivieracode.realm.Realm"<br>
  * - add the additional property LOCAL_BEAN_JNDI with the JNDI name space of the bean implementing the RealmDelegate interface
  *  <br> (ex: java:global/MyDelegatedApplicationName/MyLocalBean  )</li>
@@ -28,10 +28,9 @@
  * 
  * <h2>Delegated Application Setup</h2>
  * <p>
- * The application managing the authentication and authorization must add the JAR as a dependency and provide
- * an EJB implementing the RealmDelegate interface.
+ * Add the JAR as dependency or copy the RealmDelegate interface to the project.
  * <p>
- * The LOCAL_BEAN_JNDI property in the realm configuration must be set to the JNDI name space of this EJB.
+ * The LOCAL_BEAN_JNDI additional property in the realm configuration must be set to the JNDI name space of the local EJB implementing the RealmDelegate interface.
  * 
  * <h2>Client Application Setup</h2>
  * <p>
