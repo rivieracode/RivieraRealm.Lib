@@ -1,8 +1,8 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.rivieracode/RivieraRealm.Lib/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.rivieracode/RivieraRealm.Lib) 
 
-# RiveraRealm.Lib ( [JAVADOC](https://rivieracode.github.io/RivieraRealm.Lib) )
+# RivieraRealm.Lib ( [JAVADOC](https://rivieracode.github.io/RivieraRealm.Lib) )
 
-RiveraRealm.Lib targets Glassfish application server to extend easily Java Authentication and Authorization Service (JAAS).
+RivieraRealm.Lib targets Glassfish application server to extend easily Java Authentication and Authorization Service (JAAS).
 
 This API delegates these tasks to a local EJB bean deployed in the Glassfish instance (WAR, EAR) allowing:
 
@@ -17,7 +17,7 @@ This API delegates these tasks to a local EJB bean deployed in the Glassfish ins
 * Complete the "login.conf" file in the "config" directory with :
 
 ```
-RiveraRealmContext {
+RivieraRealmContext {
     com.rivieracode.realm.LoginModule required;
  };
 ```
